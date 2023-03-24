@@ -9,13 +9,16 @@ namespace PopupMAUI
 {
     public class Contacts : INotifyPropertyChanged
     {
+        #region Fields
         private string contactName;        
-        private string contactimage;      
-    
+        private string contactimage;
+        #endregion
+
         public Contacts()
         {
         }
-        
+
+        #region Properties
         public string ContactName
         {
             get { return contactName; }
@@ -38,7 +41,9 @@ namespace PopupMAUI
                 this.RaisedOnPropertyChanged("ContactImage");
             }
         }
-       
+        #endregion
+
+        #region Interface Member
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void RaisedOnPropertyChanged(string _PropertyName)
@@ -48,5 +53,6 @@ namespace PopupMAUI
                 PropertyChanged(this, new PropertyChangedEventArgs(_PropertyName));
             }
         }
+        #endregion
     }
 }
