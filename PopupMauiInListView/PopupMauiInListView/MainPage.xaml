@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             xmlns:sfListView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:local="clr-namespace:PopupMauiInListView"
+             x:Class="PopupMauiInListView.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ContactsViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid>
+            <sfListView:SfListView  x:Name="listView" ItemSize="56"
+                                    ItemsSource="{Binding Items}" 
+                                    SelectionMode="None"
+                                    ItemTapped="ListView_ItemTapped">
+                <sfListView:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="grid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="56" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding ContactImage}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   HeightRequest="40"
+                                   WidthRequest="40"/>
+
+                            <Label Grid.Column="1"
+                                   VerticalTextAlignment="Center"
+                                   LineBreakMode="NoWrap"
+                                   Text="{Binding ContactName}" 
+                                   FontSize="14" />
+
+                            <Image Grid.Column="2"
+                                   Source="{Binding ContactType}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End"
+                                   HeightRequest="20"
+                                   WidthRequest="20" Margin="0,0,8,0"/>
+
+                            <StackLayout BackgroundColor="LightGray" 
+                                         HeightRequest="1" 
+                                         Grid.Row="1" Grid.ColumnSpan="3"/>
+                        </Grid>
+                    </DataTemplate>
+                </sfListView:SfListView.ItemTemplate>
+            </sfListView:SfListView>
+
+            <sfPopup:SfPopup x:Name="sfPopup" 
+                         WidthRequest="220" HeightRequest="120"
+                         ShowCloseButton="True">
+                <sfPopup:SfPopup.ContentTemplate>
+                    <DataTemplate>
+                        <Label Text="ListView item is tapped"                           
+                           TextColor="Black"
+                           FontSize="14"
+                           FontFamily="Roboto"/>
+                    </DataTemplate>
+                </sfPopup:SfPopup.ContentTemplate>
+            </sfPopup:SfPopup>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
