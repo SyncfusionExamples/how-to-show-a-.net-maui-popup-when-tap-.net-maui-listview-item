@@ -6,10 +6,9 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 	}
-
-    private void ListView_ItemTapped(object sender, Syncfusion.Maui.ListView.ItemTappedEventArgs e)
-    {
+	private void ListView_ItemTapped(object sender, Syncfusion.Maui.ListView.ItemTappedEventArgs e)
+	{
 		sfPopup.Show();
-    }
+	}
 }
 
