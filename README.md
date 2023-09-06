@@ -35,7 +35,7 @@ This example shows how to show a .NET MAUI Popup when tap .NET MAUI ListView ite
 
 private void ListView_ItemTapped(object sender, Syncfusion.Maui.ListView.ItemTappedEventArgs e)
 {
-	sfPopup.Show();
+    sfPopup.Show();
 }
 
 ## Requirements to run the demo
