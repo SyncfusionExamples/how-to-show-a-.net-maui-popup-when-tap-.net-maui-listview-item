@@ -1,6 +1,5 @@
-# how-to-show-a-.net-maui-popup-when-tap-.net-maui-listview-item
-
-This example shows how to show a .NET MAUI Popup when tap .NET MAUI ListView item
+# How to show a .NET MAUI Popup (SfListView) when tapping a .NET MAUI ListView(SfListView) item?
+This example shows how to show a .NET MAUI Popup (SfListView) when tapping a .NET MAUI ListView(SfListView) item.
 
 ## XAML 
    <Grid>
@@ -32,11 +31,12 @@ This example shows how to show a .NET MAUI Popup when tap .NET MAUI ListView ite
         </Grid>
 
 ## C#
-
+```
 private void ListView_ItemTapped(object sender, Syncfusion.Maui.ListView.ItemTappedEventArgs e)
 {
     sfPopup.Show();
 }
+```
 
 ## Requirements to run the demo
 
